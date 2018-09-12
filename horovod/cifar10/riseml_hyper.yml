@@ -2,16 +2,16 @@ project: horovod-cifar10
 train:
   framework: tensorflow
   tensorflow:
-    tensorboard: false
+    tensorboard: true
     horovod:
-      workers: 2
+      workers: 4
   install:
     - apt-get update && apt-get install -y git
     - pip install -r requirements.txt
   resources:
     gpus: 1
-    cpus: 2
-    mem: 1024
+    cpus: 4
+    mem: 16384
   parameters:
     lr:
       - 0.0001
